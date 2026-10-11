@@ -1,5 +1,6 @@
 {
   "package": {
+    "downloadUrl": "https://github.com/ankit261194/AnkitTV/releases/download/v32.64/Ankit_TV_Universal_Stable.apk",
     "downloadUrlList_armeabi-v7a": [
       "https://github.com/ankit261194/AnkitTV/releases/download/v32.64/Ankit_TV_MiTV_Stable.apk"
     ],
