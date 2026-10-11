@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="feedback">
-        <item>Telegram|https://t.me/SmartTubeEN</item>
-        <item>Discord|https://discord.gg/Wt8HDDej5z</item>
-        <!--<item>Email|firsthash@gmail.com</item>-->
+        <item>👑 WhatsApp Support (+91 8533955333)|https://wa.me/918533955333?text=Ankit%20TV%20Feedback</item>
+        <item>📞 Helpline (+91 8006518960)|https://wa.me/918006518960?text=Ankit%20TV%20Helpline</item>
+        <item>✉ Developer Email|mailto:ankitchaudhary@pluxy.app</item>
     </string-array>
 </resources>

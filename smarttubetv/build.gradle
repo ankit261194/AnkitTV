@@ -138,14 +138,11 @@ android {
     }
 
     packagingOptions {
-        // openvpn module fix: More than one file was found with OS independent path 'META-INF/com.android.tools/proguard/coroutines.pro'
-        //exclude 'META-INF/com.android.tools/proguard/coroutines.pro'
-        // Not working!
-        // exclude '**/SearchOrbView.class'
-
-        // Remove unneeded arches from universal apk here because 'splits' cannot do this
-        // exclude "lib/x86_64/**"
-        // exclude "lib/armeabi/**"
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+            excludes += '/META-INF/*.version'
+            excludes += '/META-INF/*.properties'
+        }
     }
 
     lintOptions {
