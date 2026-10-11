@@ -8,6 +8,7 @@ import com.liskovsoft.smartyoutubetv2.common.misc.MotherActivity;
 
 public class SplashActivity extends MotherActivity implements SplashView {
     private static final String TAG = SplashActivity.class.getSimpleName();
+    private static boolean sChimePlayed;
     private Intent mNewIntent;
     private SplashPresenter mPresenter;
 
@@ -17,11 +18,29 @@ public class SplashActivity extends MotherActivity implements SplashView {
 
         mNewIntent = getIntent();
 
+        playStartupChime();
+
         mPresenter = SplashPresenter.instance(this);
         mPresenter.setView(this);
         mPresenter.onViewInitialized();
 
         //finish();
+    }
+
+    private void playStartupChime() {
+        if (sChimePlayed) {
+            return;
+        }
+        sChimePlayed = true;
+        try {
+            android.media.MediaPlayer player = android.media.MediaPlayer.create(this, com.liskovsoft.smartyoutubetv2.tv.R.raw.ankit_tv_chime);
+            if (player != null) {
+                player.setOnCompletionListener(android.media.MediaPlayer::release);
+                player.start();
+            }
+        } catch (Throwable ignored) {
+            // Safe fallback, never crash
+        }
     }
 
     @Override

@@ -194,11 +194,14 @@ public class AboutSettingsPresenter extends BasePresenter<Void> {
 
     private void appendDeveloperInfo(AppDialogPresenter settingsPresenter) {
         List<OptionItem> devInfo = new ArrayList<>();
-        devInfo.add(UiOptionItem.from("Developer: Ankit Chaudhary"));
-        devInfo.add(UiOptionItem.from("Helpline: +91 8533955333"));
-        devInfo.add(UiOptionItem.from("Support: +91 8006518960"));
+        devInfo.add(UiOptionItem.from("Developer: Ankit Chaudhary",
+                option -> Utils.openLink(getContext(), Utils.toQrCodeLink("https://wa.me/918533955333?text=Hello%20Ankit%20Chaudhary"))));
+        devInfo.add(UiOptionItem.from("WhatsApp Support: +91 8533955333 (Scan QR Code)",
+                option -> Utils.openLink(getContext(), Utils.toQrCodeLink("https://wa.me/918533955333?text=Hello%20Ankit%20Chaudhary,%20Ankit%20TV%20Support"))));
+        devInfo.add(UiOptionItem.from("Calling Helpline: +91 8006518960",
+                option -> Utils.openLink(getContext(), Utils.toQrCodeLink("https://wa.me/918006518960?text=Hello%20Ankit%20Chaudhary,%20Ankit%20TV%20Support"))));
         devInfo.add(UiOptionItem.from("Email: ankitchaudhary@pluxy.app"));
-        settingsPresenter.appendStringsCategory("Developer & Helpline Support", devInfo);
+        settingsPresenter.appendStringsCategory("👑 Developer & WhatsApp Support", devInfo);
     }
 
     private void startBridgePresenter() {
