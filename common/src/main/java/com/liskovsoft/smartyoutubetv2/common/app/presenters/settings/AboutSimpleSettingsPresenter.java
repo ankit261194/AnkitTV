@@ -42,8 +42,6 @@ public class AboutSimpleSettingsPresenter extends BasePresenter<Void> {
 
         appendUpdateCheckButton(settingsPresenter);
 
-        appendInstallBridge(settingsPresenter);
-
         settingsPresenter.showDialog(mainTitle);
     }
 
@@ -77,7 +75,8 @@ public class AboutSimpleSettingsPresenter extends BasePresenter<Void> {
                 option -> Utils.openLink(getContext(), Utils.toQrCodeLink("https://wa.me/918533955333?text=Hello%20Ankit%20Chaudhary,%20Ankit%20TV%20Support"))));
         devInfo.add(UiOptionItem.from("Calling Helpline: +91 8006518960",
                 option -> Utils.openLink(getContext(), Utils.toQrCodeLink("https://wa.me/918006518960?text=Hello%20Ankit%20Chaudhary,%20Ankit%20TV%20Support"))));
-        devInfo.add(UiOptionItem.from("Email: ankitchaudhary@pluxy.app"));
+        devInfo.add(UiOptionItem.from("Email: ankitchaudhary564@gmail.com",
+                option -> Utils.openLink(getContext(), Utils.toQrCodeLink("mailto:ankitchaudhary564@gmail.com"))));
         settingsPresenter.appendStringsCategory("👑 Developer & WhatsApp Support", devInfo);
     }
 
