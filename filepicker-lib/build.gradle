@@ -3,15 +3,15 @@ apply plugin: 'com.android.library'
 
 task sourceJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
-    classifier 'sources'
+    archiveClassifier.set('sources')
 }
 
 android {
-    compileSdkVersion project.properties.compileSdkVersion
-    buildToolsVersion project.properties.buildToolsVersion
+    compileSdkVersion 34
+    buildToolsVersion '34.0.0'
     defaultConfig {
-        minSdkVersion project.properties.minSdkVersion
-        targetSdkVersion project.properties.targetSdkVersion
+        minSdkVersion 17
+        targetSdkVersion 27
         versionCode 19
         versionName '3.0.1'
     }

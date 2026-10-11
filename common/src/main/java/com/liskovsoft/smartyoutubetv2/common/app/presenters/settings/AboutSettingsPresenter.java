@@ -44,6 +44,8 @@ public class AboutSettingsPresenter extends BasePresenter<Void> {
 
         String country = LocaleUtility.getCurrentLocale(getContext()).getCountry();
 
+        appendDeveloperInfo(settingsPresenter);
+
         appendUpdateCheckButton(settingsPresenter);
 
         appendAutoUpdateSwitch(settingsPresenter);
@@ -188,6 +190,15 @@ public class AboutSettingsPresenter extends BasePresenter<Void> {
                 option -> startBridgePresenter());
 
         settingsPresenter.appendSingleButton(installBridgeOption);
+    }
+
+    private void appendDeveloperInfo(AppDialogPresenter settingsPresenter) {
+        List<OptionItem> devInfo = new ArrayList<>();
+        devInfo.add(UiOptionItem.from("Developer: Ankit Chaudhary"));
+        devInfo.add(UiOptionItem.from("Helpline: +91 8533955333"));
+        devInfo.add(UiOptionItem.from("Support: +91 8006518960"));
+        devInfo.add(UiOptionItem.from("Email: ankitchaudhary@pluxy.app"));
+        settingsPresenter.appendStringsCategory("Developer & Helpline Support", devInfo);
     }
 
     private void startBridgePresenter() {

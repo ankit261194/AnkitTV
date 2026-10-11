@@ -1,0 +1,21 @@
+{
+  "package": {
+    "downloadUrlList_armeabi-v7a": [
+      "https://github.com/ankit261194/AnkitTV/releases/download/v32.64/Ankit_TV_MiTV_Stable.apk"
+    ],
+    "downloadUrlList_arm64-v8a": [
+      "https://github.com/ankit261194/AnkitTV/releases/download/v32.64/Ankit_TV_64bit_Stable.apk"
+    ],
+    "downloadUrlList": [
+      "https://github.com/ankit261194/AnkitTV/releases/download/v32.64/Ankit_TV_Universal_Stable.apk"
+    ]
+  },
+  "32.64": {
+    "versionCode": 2454,
+    "changelog": [
+      "Ankit TV Official Release by Ankit Chaudhary (+91 8533955333, +91 8006518960)",
+      "Permanent custom VIP 3D Royal Gold Crown Branding with Authentic Portrait",
+      "Pure Ad-free YouTube experience on Mi TV / Android TV with 4K/HDR & SponsorBlock"
+    ]
+  }
+}

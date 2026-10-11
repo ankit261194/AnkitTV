@@ -12,6 +12,8 @@ import com.liskovsoft.smartyoutubetv2.common.app.presenters.base.BasePresenter;
 import com.liskovsoft.smartyoutubetv2.common.app.presenters.dialogs.ATVBridgePresenter;
 import com.liskovsoft.smartyoutubetv2.common.app.presenters.dialogs.AmazonBridgePresenter;
 import com.liskovsoft.smartyoutubetv2.common.app.presenters.dialogs.AppUpdatePresenter;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AboutSimpleSettingsPresenter extends BasePresenter<Void> {
     private final AppUpdateChecker mUpdateChecker;
@@ -28,10 +30,12 @@ public class AboutSimpleSettingsPresenter extends BasePresenter<Void> {
 
     public void show() {
         String mainTitle = String.format("%s %s",
-                getContext().getString(R.string.app_name) + " MOD",
+                getContext().getString(R.string.app_name),
                 AppInfoHelpers.getAppVersionName(getContext()));
 
         AppDialogPresenter settingsPresenter = AppDialogPresenter.instance(getContext());
+
+        appendDeveloperInfo(settingsPresenter);
 
         appendAutoUpdateSwitch(settingsPresenter);
 
@@ -62,6 +66,15 @@ public class AboutSimpleSettingsPresenter extends BasePresenter<Void> {
                 option -> startBridgePresenter());
 
         settingsPresenter.appendSingleButton(installBridgeOption);
+    }
+
+    private void appendDeveloperInfo(AppDialogPresenter settingsPresenter) {
+        List<OptionItem> devInfo = new ArrayList<>();
+        devInfo.add(UiOptionItem.from("Developer: Ankit Chaudhary"));
+        devInfo.add(UiOptionItem.from("Helpline: +91 8533955333"));
+        devInfo.add(UiOptionItem.from("Support: +91 8006518960"));
+        devInfo.add(UiOptionItem.from("Email: ankitchaudhary@pluxy.app"));
+        settingsPresenter.appendStringsCategory("Developer & Helpline Support", devInfo);
     }
 
     private void startBridgePresenter() {
