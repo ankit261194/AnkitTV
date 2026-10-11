@@ -35,7 +35,13 @@ public class SplashActivity extends MotherActivity implements SplashView {
         try {
             android.media.MediaPlayer player = android.media.MediaPlayer.create(this, com.liskovsoft.smartyoutubetv2.tv.R.raw.ankit_tv_chime);
             if (player != null) {
-                player.setOnCompletionListener(android.media.MediaPlayer::release);
+                player.setOnCompletionListener(mp -> {
+                    try { mp.release(); } catch (Throwable ignored) {}
+                });
+                player.setOnErrorListener((mp, what, extra) -> {
+                    try { mp.release(); } catch (Throwable ignored) {}
+                    return true;
+                });
                 player.start();
             }
         } catch (Throwable ignored) {
